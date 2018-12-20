@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/user/.config/google-chrome
+chmod 000 Default/
+echo "Deleting Complete"
+sudo su - user
