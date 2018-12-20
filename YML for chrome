@@ -1,0 +1,9 @@
+---
+- name: CHROME DATA
+  hosts: all
+  become: no
+
+  tasks:
+
+  - name: Close Chrome USER_DATA directory permission
+    command: chmod 000 /home/user/.config/google-chrome/Default/
