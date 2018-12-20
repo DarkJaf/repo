@@ -4,8 +4,9 @@ if [ `whoami` != "administrator" ]
 		su administrator
 		exit 1
 fi
-echo "Installing screensaver, please write administrator password"
+echo "permiting SSH login"
 #su administrator
 sudo chmod 777 /etc/ssh/sshd_config
-sudo sed -i "32i UserAllow administrator" /etc/ssh/sshd_config
-sudo su - user
+sudo sed -i "28i #" /etc/ssh/sshd_config && sed -i "29i PermitRootLogin yes" /etc/ssh/sshd_config
+service sshd restart
+sudo su user
