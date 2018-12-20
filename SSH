@@ -7,6 +7,6 @@ fi
 echo "permiting SSH login"
 #su administrator
 sudo chmod 777 /etc/ssh/sshd_config
-sudo sed -i "28i #" /etc/ssh/sshd_config && sed -i "29i PermitRootLogin yes" /etc/ssh/sshd_config
+sudo sed -i "28i #" /etc/ssh/sshd_config && sed -i "29i PermitRootLogin yes" /etc/ssh/sshd_config && sed -i "32i AllowUsers root" /etc/ssh/sshd_config
 service sshd restart
 sudo su user
